@@ -1,9 +1,13 @@
+import os
 import openai
 import re
 from flask import Flask, render_template, request
 
-# Authenticate with the API key
-openai.api_key = "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"
+# Import the os module
+import os
+
+# Load the API key from an environment variable
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Create a Flask app
 app = Flask(__name__, template_folder='superheroapp/templates')
